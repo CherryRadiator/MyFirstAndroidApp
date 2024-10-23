@@ -8,6 +8,7 @@ import androidx.core.graphics.Insets;
 import android.view.View;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void disable(View v){
-        int x = v.getId();
-        v.setEnabled(false);
+        View myView = findViewById(R.id.button);
+        myView.setEnabled(false);
+        Button myButton = (Button) myView;
+        myButton.setText("Disabled");
     }
 }
