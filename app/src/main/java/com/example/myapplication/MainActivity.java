@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,13 +28,11 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
-
-    public void DisableButtonNClearTextBar(View v) {
-        String input = ((TextView)findViewById(R.id.source)).getText().toString();
-        TextView textBar = findViewById(R.id.source);
-        textBar.setText("");
-        v.setEnabled(false);
-        Button b = (Button) findViewById(R.id.button);
-        b.setText(input);
+    public void PrintToOutputFromInput(View v) {
+        Button button = (Button)findViewById(R.id.Button);
+        String input = ((TextView)findViewById(R.id.inputText)).getText().toString();
+        ((TextView)findViewById(R.id.outputText)).setText(input);
+        ((TextView)findViewById(R.id.inputText)).setText("");
+        Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
     }
 }
